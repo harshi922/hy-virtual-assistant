@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Futuristic Assistant</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./vendore/texllate/animate.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="d-flex flex-column justify-content-center align-items-center">
+        <div id="blob-container" class="d-flex justify-content-center align-items-center">
+            <div class="blob blob1"></div>
+            <div class="blob blob2"></div>
+            <div class="core">
+                <div style="border-radius: 50%;">
+                </div>
+            </div>
+        </div>
+        <h5 class="text text-light p-10 mt-5">You can ask me anything you'd like!</h5>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const blobs = document.querySelectorAll(".blob");
+
+            // Floating rotation and scaling animation for blobs
+            gsap.to(blobs, {
+                duration: 5,
+                rotate: 360,
+                scale: 1.2,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut",
+            });
+
+            // Specific morphing motion for each blob
+            gsap.to(".blob1", {
+                duration: 6,
+                x: 50,
+                y: 20,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut",
+            });
+
+            gsap.to(".blob2", {
+                duration: 6,
+                x: -50,
+                y: -20,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut",
+            });
+
+            // Core pulsing effect with faster scale animation
+            gsap.to(".core", {
+                scale: 1.3,
+                duration: 2,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut"
+            });
+        });
+    </script>
+
+    <script src="./vendore/texllate/jquery.fittext.js"></script>
+    <script src="./vendore/texllate/jquery.lettering.js"></script>
+    <script src="http://jschr.github.io/textillate/jquery.textillate.js"></script>
+    <script src="./main.js"></script>
+
+</body>
+</html>

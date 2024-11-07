@@ -1,0 +1,37 @@
+/* styles.css */
+body {
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+#blob-container {
+    position: relative;
+    width: 25vw;
+    height: 25vw;  /* Ensures a square container */
+    max-width: 300px;
+    max-height: 300px;
+    min-width: 150px;
+    min-height: 150px;
+}
+
+.blob {
+    position: absolute;
+    width: 90%;       /* Blob is circular, 90% of container width */
+    height: 90%;      /* Equal height and width to keep it circular */
+    border-radius: 50%;  /* Perfect circle */
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.7), rgba(255, 182, 193, 0.7));
+    filter: blur(5vw);
+}
+
+.core {
+    width: 60%;
+    height: 60%;
+    border-radius: 50%;  /* Circle for core as well */
+    background-color: rgba(0, 0, 0, 0.35);
+    box-shadow: 0 0 6vw rgba(255, 105, 180, 0.8), 0 0 3vw rgba(255, 182, 193, 0.6);
+}
